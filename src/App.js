@@ -9,9 +9,6 @@ import PropTypes from 'prop-types'
 
 import {IntlProvider, addLocaleData} from 'react-intl'
 import en from 'react-intl/locale-data/en'
-import vi from 'react-intl/locale-data/vi'
-import ru from 'react-intl/locale-data/ru'
-import zh from 'react-intl/locale-data/zh'
 import enMessages from './languages/en'
 import ruMessages from './languages/ru'
 import viMessages from './languages/vi'
@@ -54,7 +51,7 @@ const HOME_TESTNET = 'https://testnet.steexp.com'
 
 const storage = storageInit()
 
-addLocaleData([...en, ...ru, ...vi, ...zh])
+addLocaleData([...en])
 
 const initialLanguage =
   storage.getItem('language') || navigator.language || 'en'

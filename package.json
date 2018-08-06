@@ -1,16 +1,16 @@
 {
   "name": "boscoinexplorer",
-  "description": "Ledger explorer for the Stellar network",
+  "description": "Ledger explorer for the BOScoin token network",
   "version": "1.0.7",
   "license": "Apache-2.0",
   "author": "Chris Hatch",
   "homepage": "https://steexp.com",
-  "repository": "chatch/stellarexplorer",
+  "repository": "bosnet/tokennet-explorer",
   "bugs": {
-    "url": "https://github.com/chatch/stellarexplorer/issues"
+    "url": "https://github.com/bosnet/tokennet-explorer/issues"
   },
   "keywords": [
-    "stellar",
+    "boscoin",
     "react",
     "ledger",
     "block explorer",
