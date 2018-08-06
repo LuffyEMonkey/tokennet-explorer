@@ -30,7 +30,6 @@ import Logo from './shared/Logo'
 import OperationTable from './OperationTable'
 import OfferTable from './OfferTable'
 import PaymentTable from './PaymentTable'
-import TradeTable from './TradeTable'
 import TransactionTable from './TransactionTableContainer'
 
 const stellarAddressFromURI = () => {
@@ -74,7 +73,7 @@ const NameValueTable = ({data, decodeValue = false}) => {
 }
 
 const balanceRow = bal => (
-  <tr key={bal.asset_code ? `${bal.asset_code}-${bal.asset_issuer}` : 'XLM'}>
+  <tr key={bal.asset_code ? `${bal.asset_code}-${bal.asset_issuer}` : 'BOS'}>
     <td>
       <Asset
         type={bal.asset_type}
@@ -332,9 +331,6 @@ class Account extends React.Component {
                 showSeller={false}
                 usePaging
               />
-            </Tab>
-            <Tab eventKey="trades" title={formatMessage({id: 'trades'})}>
-              <TradeTable key={a.id} account={a.id} limit={20} usePaging />
             </Tab>
             <Tab eventKey="effects" title={formatMessage({id: 'effects'})}>
               {// OPTIMISATION: render on focus only as it hits the server for every effect

@@ -1,7 +1,6 @@
 import React from 'react'
 import Nav from 'react-bootstrap/lib/Nav'
 import Navbar from 'react-bootstrap/lib/Navbar'
-import NavDropdown from 'react-bootstrap/lib/NavDropdown'
 import NavItem from 'react-bootstrap/lib/NavItem'
 import MenuItem from 'react-bootstrap/lib/MenuItem'
 import {Link} from 'react-router-dom'
@@ -9,7 +8,6 @@ import {LinkContainer} from 'react-router-bootstrap'
 import {FormattedMessage, injectIntl} from 'react-intl'
 
 import LanguageSelector from './LanguageSelector'
-import NetworkSelector from './NetworkSelector'
 import logoImg from '../../img/logo.png'
 
 class Header extends React.Component {
@@ -37,14 +35,6 @@ class Header extends React.Component {
               switcher={this.props.languageSwitcher}
             />
           </Navbar.Form>
-          <Navbar.Form pullRight>
-            <NetworkSelector
-              networkAddress={this.props.networkAddress}
-              networkType={this.props.networkType}
-              switchNetworkType={this.props.switchNetworkType}
-              setNetworkAddress={this.props.setNetworkAddress}
-            />
-          </Navbar.Form>
           <Nav>
             <LinkContainer to="/operations">
               <NavItem>
@@ -62,52 +52,25 @@ class Header extends React.Component {
               </NavItem>
             </LinkContainer>
 
-            <li className="divider-vertical" />
-
-            <LinkContainer to="/assets">
-              <MenuItem>
-                <FormattedMessage id="assets" />
-              </MenuItem>
-            </LinkContainer>
-            <LinkContainer to="/anchors">
-              <MenuItem>
-                <FormattedMessage id="anchors" />
-              </MenuItem>
-            </LinkContainer>
             <LinkContainer to="/exchanges">
               <MenuItem>
                 <FormattedMessage id="exchanges" />
               </MenuItem>
             </LinkContainer>
 
+            <LinkContainer to="/payments">
+              <MenuItem>
+                <FormattedMessage id="payments" />
+              </MenuItem>
+            </LinkContainer>
+
             <li className="divider-vertical" />
 
-            <NavDropdown
-              eventKey={3}
-              title={formatMessage({id: 'more'})}
-              id="basic-nav-dropdown"
-            >
-              <LinkContainer to="/effects">
-                <MenuItem>
-                  <FormattedMessage id="effects" />
-                </MenuItem>
-              </LinkContainer>
-              <LinkContainer to="/payments">
-                <MenuItem>
-                  <FormattedMessage id="payments" />
-                </MenuItem>
-              </LinkContainer>
-              <LinkContainer to="/trades">
-                <MenuItem>
-                  <FormattedMessage id="trades" />
-                </MenuItem>
-              </LinkContainer>
-              <LinkContainer to="/pools">
-                <MenuItem>
-                  <FormattedMessage id="inflation.pools" />
-                </MenuItem>
-              </LinkContainer>
-            </NavDropdown>
+            <LinkContainer to="/effects">
+              <MenuItem>
+                <FormattedMessage id="effects" />
+              </MenuItem>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

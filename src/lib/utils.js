@@ -10,8 +10,8 @@ import {sdk} from './stellar'
 // formatAmount().
 BigNumber.config({EXPONENTIAL_AT: 8})
 
-const STROOPS_PER_LUMEN = 10000000
-const stroopsToLumens = stroops => stroops / STROOPS_PER_LUMEN
+const GON_PER_BOS = 10000000
+const gonsToBos = gons => gons / GON_PER_BOS
 
 // stellar federated address (eg. "stellar*fed.network")
 const isStellarAddress = addr => /^[^*,]*\*[a-z0-9-.]*$/i.test(addr)
@@ -88,5 +88,5 @@ export {
   isTxHash,
   shortHash,
   storageInit,
-  stroopsToLumens,
+  gonsToBos
 }

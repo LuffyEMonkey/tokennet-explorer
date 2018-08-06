@@ -41,14 +41,14 @@ class Footer extends React.PureComponent {
         </Row>
         <Row>
           <Col mdOffset={10} md={2}>
-            <a href="https://stellar.org">
+            <a href="https://boscoin.io/">
               <img
-                src={`${process.env.PUBLIC_URL}/stellar.ico`}
+                src={`${process.env.PUBLIC_URL}/boscoin.ico`}
                 alt="stellar"
                 height={20}
                 width={20}
               />
-              Stellar.org
+              BOScoin.io
             </a>
           </Col>
         </Row>

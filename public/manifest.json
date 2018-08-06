@@ -1,6 +1,6 @@
 {
-  "short_name": "steexp",
-  "name": "Stellar Explorer",
+  "short_name": "bosexp",
+  "name": "BOScoin Explorer",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
@@ -10,21 +10,6 @@
       "src": "favicon.ico",
       "sizes": "32x32",
       "type": "image/x-icon"
-    },
-    {
-      "src": "logo512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "logo128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "logo64.png",
-      "sizes": "64x64",
-      "type": "image/png"
     }
   ]
 }

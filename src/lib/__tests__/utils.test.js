@@ -7,7 +7,7 @@ import {
   isStellarAddress,
   isTxHash,
   shortHash,
-  stroopsToLumens,
+  gonsToBos,
 } from '../utils'
 
 it('assetKeyToIssuer extracts correctly', () => {
@@ -23,10 +23,10 @@ it('assetKeyToIssuer extracts correctly', () => {
   ).toBe('GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH')
 })
 
-it('stroopsToLumens converts correctly', () => {
-  expect(stroopsToLumens(100)).toBe(0.00001)
-  expect(stroopsToLumens(5000000)).toBe(0.5)
-  expect(stroopsToLumens(5000000000)).toBe(500)
+it('gonsToBos converts correctly', () => {
+  expect(gonsToBos(100)).toBe(0.00001)
+  expect(gonsToBos(5000000)).toBe(0.5)
+  expect(gonsToBos(5000000000)).toBe(500)
 })
 
 it('isDefInt checks for defined int correctly', () => {

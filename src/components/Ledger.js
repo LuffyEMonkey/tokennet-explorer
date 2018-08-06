@@ -14,7 +14,7 @@ import {
 } from 'react-intl'
 import has from 'lodash/has'
 
-import {handleFetchDataFailure, shortHash, stroopsToLumens} from '../lib/utils'
+import {handleFetchDataFailure, shortHash, gonsToBos} from '../lib/utils'
 import ClipboardCopy from './shared/ClipboardCopy'
 import {withServer} from './shared/HOCs'
 import TransactionTable from './TransactionTableContainer'
@@ -38,7 +38,7 @@ const responseToState = rsp => {
     protocol: rsp.protocol_version,
     totalCoins: rsp.total_coins, // maybe display these on the front page ...?
     feePool: rsp.fee_pool,
-    maxTxSetSize: rsp.max_tx_set_size,
+    maxTxSetSize: 200,
 
     baseInStroops,
     baseFee: baseInStroops ? rsp.base_fee_in_stroops : rsp.base_fee,
@@ -74,7 +74,7 @@ class Ledger extends React.Component {
       txCount,
       urlFn,
     } = this.props
-
+    
     const {formatMessage} = this.props.intl
 
     return (
@@ -116,22 +116,22 @@ class Ledger extends React.Component {
               <Table>
                 <tbody>
                   <DetailRow label="base.fee">
-                    <FormattedNumber value={baseFee} /> stroops
+                    <FormattedNumber value={baseFee} /> GON
                   </DetailRow>
                   <DetailRow label="base.reserve">
                     {baseInStroops
-                      ? stroopsToLumens(baseReserve)
+                      ? gonsToBos(baseReserve)
                       : Number(baseReserve)}{' '}
-                    XLM
+                    BOS
                   </DetailRow>
                   <DetailRow label="max.transactions">
                     {maxTxSetSize} per ledger
                   </DetailRow>
                   <DetailRow label="fee.pool">
-                    <FormattedNumber value={feePool} /> XLM
+                    <FormattedNumber value={feePool} /> BOS
                   </DetailRow>
                   <DetailRow label="total.coins">
-                    <FormattedNumber value={totalCoins} /> XLM
+                    <FormattedNumber value={totalCoins} /> BOS
                   </DetailRow>
                   <DetailRow label="protocolVersion">{protocol}</DetailRow>
                 </tbody>
