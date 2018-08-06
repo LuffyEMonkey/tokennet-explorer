@@ -10,9 +10,6 @@ import PropTypes from 'prop-types'
 import {IntlProvider, addLocaleData} from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import enMessages from './languages/en'
-import ruMessages from './languages/ru'
-import viMessages from './languages/vi'
-import zhMessages from './languages/zh'
 
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -29,8 +26,6 @@ import Transaction from './components/Transaction'
 import Transactions from './components/Transactions'
 import Account from './components/Account'
 import Accounts from './components/Accounts'
-import Anchor from './components/Anchor'
-import Anchors from './components/Anchors'
 import Exchanges from './components/Exchanges'
 import Operations from './components/Operations'
 import Payments from './components/Payments'
@@ -46,8 +41,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-json-pretty/src/JSONPretty.1337.css'
 import './App.css'
 
-const HOME_PUBLIC = 'https://steexp.com'
-const HOME_TESTNET = 'https://testnet.steexp.com'
+const HOME_PUBLIC = 'https://explorer.boscoin.io'
+const HOME_TESTNET = 'https://explorer-dev.boscoin.io'
 
 const storage = storageInit()
 
@@ -63,12 +58,6 @@ const networkAddress = storage.getItem('networkAddress') || defaultNetworkAddres
 
 const getMessages = locale => {
   switch (locale) {
-    case 'vi':
-      return viMessages
-    case 'ru':
-      return ruMessages
-    case 'zh':
-      return zhMessages
     default:
       return enMessages
   }
@@ -137,8 +126,6 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/accounts" component={Accounts} />
                 <Route path="/account/:id" component={Account} />
-                <Route path="/anchors" component={Anchors} />
-                <Route path="/anchor/:id" component={Anchor} />
                 <Route path="/effects" component={Effects} />
                 <Route path="/exchanges" component={Exchanges} />
                 <Route path="/ledgers" component={Ledgers} />
