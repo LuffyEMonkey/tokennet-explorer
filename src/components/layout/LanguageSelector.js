@@ -6,7 +6,7 @@ import langSelectImg from '../../img/lang-select.png'
 
 const onClickTranslateHelp = () => {
   window.location.href =
-    'https://github.com/chatch/stellarexplorer/tree/master/src/languages'
+    'https://github.com/bosnet/tokennet-explorer/tree/master/src/languages'
 }
 
 const styleLanguageSelector = {
@@ -31,15 +31,6 @@ const LanguageSelector = ({
     <Dropdown.Menu style={{color: 'white'}}>
       <MenuItem lang="en" onClick={switcher}>
         English
-      </MenuItem>
-      <MenuItem lang="zh" onClick={switcher}>
-        中文
-      </MenuItem>
-      <MenuItem lang="ru" onClick={switcher}>
-        Pусский
-      </MenuItem>
-      <MenuItem lang="vi" onClick={switcher}>
-        Tiếng Việt
       </MenuItem>
       <MenuItem
         onClick={onClickTranslateHelp}
