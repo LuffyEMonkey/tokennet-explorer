@@ -8,7 +8,6 @@ import AccountLink from './shared/AccountLink'
 import Asset from './shared/Asset'
 import FormattedAmount from './shared/FormattedAmount'
 import JSONButton from './shared/JSONButton'
-import TimeSynchronisedFormattedRelative from './shared/TimeSynchronizedFormattedRelative'
 import TransactionHash from './shared/TransactionHash'
 
 import {base64Decode} from '../lib/utils'
@@ -258,12 +257,6 @@ class Effect extends React.Component {
           {this.state.txHash != null && (
             <TransactionHash hash={this.state.txHash} compact={true} />
           )}
-        </td>
-        <td>
-          <TimeSynchronisedFormattedRelative
-            initialNow={this.props.parentRenderTimestamp}
-            value={effect.createdAt}
-          />
         </td>
         <td>
           <JSONButton

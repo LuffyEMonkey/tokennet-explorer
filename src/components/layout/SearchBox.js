@@ -46,7 +46,7 @@ const HelpModal = props => (
       <hr />
       <h4>OpenSearch:</h4>
       <div>
-        Stellar Explorer supports{' '}
+        BOScoin Explorer supports{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -55,7 +55,7 @@ const HelpModal = props => (
           OpenSearch
         </a>. This allows you to search directly from your browser search box or
         search bar. You should see something like the following when you
-        navigate to Stellar Explorer then open the search box. Install it from
+        navigate to BOScoin Explorer then open the search box. Install it from
         there:
       </div>
     </Modal.Body>

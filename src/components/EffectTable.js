@@ -42,9 +42,6 @@ const EffectTable = ({
         <th>
           <FormattedMessage id="transaction" />
         </th>
-        <th>
-          <FormattedMessage id="time" />
-        </th>
         <th />
       </tr>
     </thead>
