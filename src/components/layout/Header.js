@@ -7,14 +7,14 @@ import {Link} from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
 import {FormattedMessage, injectIntl} from 'react-intl'
 
-import LanguageSelector from './LanguageSelector'
+import SearchBox from './SearchBox'
 import logoImg from '../../img/logo.png'
 
 class Header extends React.Component {
   render() {
     const {formatMessage} = this.props.intl
     return (
-      <Navbar fluid fixedTop collapseOnSelect>
+      <Navbar fixedTop collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">
@@ -29,12 +29,6 @@ class Header extends React.Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Navbar.Form pullRight>
-            <LanguageSelector
-              language={this.props.language}
-              switcher={this.props.languageSwitcher}
-            />
-          </Navbar.Form>
           <Nav>
             <LinkContainer to="/operations">
               <NavItem>
@@ -72,6 +66,7 @@ class Header extends React.Component {
               </MenuItem>
             </LinkContainer>
           </Nav>
+          <SearchBox />
         </Navbar.Collapse>
       </Navbar>
     )
