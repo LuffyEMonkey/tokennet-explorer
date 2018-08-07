@@ -47,7 +47,7 @@ const storage = storageInit()
 addLocaleData([...en])
 
 const initialLanguage =
-  storage.getItem('language') || navigator.language || 'en'
+  storage.getItem('language') || 'en'
 
 // Derive network type from the hostname.
 // Network settings determine which horizon instance to pull data from.
