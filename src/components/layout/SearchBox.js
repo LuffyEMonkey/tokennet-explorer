@@ -86,7 +86,9 @@ class SearchBox extends React.Component {
   searchHandler = event => {
     event.preventDefault()
     const matchPath = searchStrToPath(this.state.searchStr)
-    this.props.history.push(matchPath)
+    if (matchPath != null) {
+      this.props.history.push(matchPath)
+    }
     // #62 security: clear search box if user put the secret key there
     if (isSecretKey(this.state.searchStr)) {
       this.setState({searchStr: ''})
@@ -96,8 +98,8 @@ class SearchBox extends React.Component {
   render() {
     const {formatMessage} = this.props.intl
     return (
-      <div id="Search-Container">
-        <form onSubmit={this.searchHandler}>
+      <div>
+        <form id="search-form" className="navbar-form navbar-right" onSubmit={this.searchHandler}>
           <InputGroup>
             <FormControl
               type="text"
